@@ -96,7 +96,7 @@ a:link {
 	font-weight: bold;
 }
 
-.nav__link_faq {
+.nav__span {
 	text-transform: uppercase;
 }
 
@@ -421,6 +421,10 @@ a:link {
 		text-align: center;
 		line-height: 36px;
 		color: #000;
+	}
+
+	.burger-menu__span {
+		text-transform: uppercase;
 	}
 
 	#check:checked ~ .burger-menu {
