@@ -11,6 +11,33 @@
 	max-width: 1578px;
 }
 
+.body::before {
+	content: '';
+	display: inline;
+	position: absolute;
+	left: 0px;
+	min-height: 936px;
+	width: 400px;
+	background-image: url(../img/vector__left.png);
+	background-repeat: no-repeat;
+	background-position: 0 -35px;
+	z-index: -1;
+}
+
+.body::after {
+	content: '';
+	display: inline;
+	position: absolute;
+	right: 0px;
+	top: 36px;
+	min-height: 937px;
+	width: 400px;
+	background-image: url(../img/vector__right.png);
+	background-repeat: no-repeat;
+	background-position: -155px -36px;
+	z-index: -1;
+}
+
 a {
 	color: #504A62;
 }
@@ -28,32 +55,6 @@ a:link {
 	padding: 0 24px 0 20px;
 	min-width: 400px;
 	max-width: 1578px;
-}
-
-.header::before {
-	content: '';
-	display: inline;
-	position: absolute;
-	left: 0px;
-	min-height: 936px;
-	width: 400px;
-	background-image: url(../img/vector__left.png);
-	background-repeat: no-repeat;
-	background-position: 0 -35px;
-	z-index: -1;
-}
-
-.header::after {
-	content: '';
-	display: inline;
-	position: absolute;
-	right: 0px;
-	min-height: 936px;
-	width: 400px;
-	background-image: url(../img/vector__right.png);
-	background-repeat: no-repeat;
-	background-position: -155px -37px;
-	z-index: -2;
 }
 
 .burger {
@@ -96,7 +97,7 @@ a:link {
 	font-weight: bold;
 }
 
-.nav__span {
+.nav__link_faq {
 	text-transform: uppercase;
 }
 
@@ -145,28 +146,26 @@ a:link {
 @media (max-width: 1366px) {
 
 	.body {
-		margin: 0 auto;
-		max-width: 1098px;
+		max-width: 1144px;
+	}
+
+	.body::before {
+		min-height: 700px;
+		background-image: url(../img/vector__left.png);
+		background-position: -8px 4px;
+		background-size: 359px;	
+	}
+
+	.body::after {
+		min-height: 700px;
+		background-image: url(../img/vector__right_1366.png);
+		background-position: 4px -35px;
 	}
 
 	.header {
 		margin: 36px 0 85px 0;
-		padding-left: 86px;
-		min-width: 400px;
-		max-width: 1098px;
-	}
-
-	.header::before {
-		min-height: 700px;
-		background-image: url(../img/vector__left.png);
-		background-position: -9px 4px;
-		background-size: 359px;	
-	}
-
-	.header::after {
-		min-height: 700px;
-		background-image: url(../img/vector__right_1366.png);
-		background-position: 4px -36px;
+		padding-left: 110px;
+		max-width: 1144px;
 	}
 
 	.logo {
@@ -191,7 +190,6 @@ a:link {
 		margin-right: 20px;
 		min-width: 258px;
 		font-size: 14px;
-		font-weight: bold;
 	}
 
 	.nav__link_features {
@@ -239,26 +237,14 @@ a:link {
 }
 
 @media (max-width: 1170px) {
-	.body {
-		margin: 0 auto;
-		max-width: 1098px;
-	}
-
-	.header {
-		margin: 36px 0 85px 0;
-		padding-left: 86px;
-		min-width: 400px;
-		max-width: 1098px;
-	}
-
-	.header::before {
+	.body::before {
 		min-height: 700px;
 		background-image: url(../img/vector__left_1170.png);
 		background-position: 0 -37px;
 		background-size: 316px;
 	}
 
-	.header::after {
+	.body::after {
 		min-height: 700px;
 		background-image: url(../img/vector__right_1170.png);
 		background-position: 29px -36px;
@@ -267,9 +253,7 @@ a:link {
 
 @media (max-width: 875px) {
 	.header {
-		margin: 36px 0 85px 0;
 		padding-left: 20px;
-		min-width: 400px;
 		max-width: 875px;
 	}
 
@@ -280,9 +264,20 @@ a:link {
 }
 
 @media (max-width: 435px) {
+	.body {
+		margin: 0 auto;
+		max-width: 435px;
+	}
+
+	.body::before,
+	.body::after {
+		display: none;
+	}
+
 	.header {
-		display: flex;
-		flex-direction: column;
+		min-width: 375px;
+		max-width: 435px;
+		padding: 0 20px 0 20px;
 	}
 
 	.logo {
@@ -294,11 +289,14 @@ a:link {
 		display: flex;
 		justify-content: center;
 	}
+
+	.main-content__text {
+		height: 120px;
+	}
 }
 
 @media (max-width: 375px) {
 	.body {
-		margin: 0 auto;
 		max-width: 299px;
 		overflow:  hidden;
 	}
@@ -311,11 +309,6 @@ a:link {
 		margin: 54px 0 34px 0;
 		min-width: 299px;	
 		max-width: 299px;
-	}
-
-	.header::before,
-	.header::after {
-		display: none;
 	}
 
 	.logo {
@@ -452,10 +445,15 @@ a:link {
 		display: none;
 	}
 
+	.body::before,
+	.body::after {
+		display: none;
+	}
+
 	.main-content {
 		min-height: 483px;
+		max-height: 483px;
 		min-width: 299px;
-		margin-left: 0px;
 		background-image: url(../img/iphonexs__mobile.png);
 		background-repeat: no-repeat;
 		background-position: bottom;
